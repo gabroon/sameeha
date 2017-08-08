@@ -1,4 +1,6 @@
+	$body = $("body");
 $('#convert_madamera').click(function(){
+	$body.addClass("loading"); 
 	var madmeraOutPut = '<?xml version="1.0" encoding="UTF-8"?><!-- ~ Copyright (c) 2013. The Trustees of Columbia University in the City of New York.~ The copyright owner has no objection to the reproduction of this work by anyone for~ non-commercial use, but otherwise reserves all rights whatsoever.  For avoidance of~ doubt, this work may not be reproduced, or modified, in whole or in part, for commercial~ use without the prior written consent of the copyright owner.-->'+
     '<madamira_input xmlns="urn:edu.columbia.ccls.madamira.configuration:0.1">'+
     '<madamira_configuration>'+
@@ -69,6 +71,7 @@ $('#convert_madamera').click(function(){
 	if(rawText == ""){
 		alert('Please put at least one word in the text area' )
 	}else{
+	
 		var arrayOfSentences = rawText.split(';');
 	//if array not empty 
 	for (var i = 0 ; i <= arrayOfSentences.length - 1; i++) {
@@ -81,7 +84,7 @@ $('#convert_madamera').click(function(){
 
 	$('#result-madamera').val(madmeraOutPut);
 	}
-	
+	$body.removeClass("loading");
 
 })
 
