@@ -1,5 +1,6 @@
+$body = $("body");
 $('#convert_scotts').click(function(){
-
+$body.addClass("loading"); 
 	var madamaraText = $('#madamaraText').val();
 	var xml = $.parseXML(madamaraText);
 	var outSeg = $(xml).find('out_seg');
@@ -123,7 +124,7 @@ $('#VP').text(VP+"");
 $('#WHADVP').text(WHADVP+"");
 $('#WHNP').text(WHNP+"");
 $('#WHPP').text(WHPP+"");
-
+$body.removeClass("loading");
 
 })
 
